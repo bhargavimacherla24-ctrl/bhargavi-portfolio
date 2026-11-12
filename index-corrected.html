@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bhargavi Macharla's portfolio, featuring data analysis, business operations, financial reporting, SQL, Power BI and Excel.">
+  <meta name="keywords" content="Bhargavi Macharla, Junior Data Analyst, Business Analyst, Financial Analyst, SQL, Power BI, Excel, Preston UK">
+  <meta name="author" content="Bhargavi Macharla">
+  <meta property="og:title" content="Bhargavi Macharla | Data & Business Analytics">
+  <meta property="og:description" content="A portfolio of data analysis, financial reporting and business operations experience.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#f7f8fa">
+  <title>Bhargavi Macharla | Data & Business Analytics</title>
+  <style>
+    :root {
+      --ink: #172338;
+      --muted: #667386;
+      --paper: #f7f8fa;
+      --white: #fff;
+      --line: #e3e7ed;
+      --navy: #142b49;
+      --blue: #315d8a;
+      --blue-soft: #eaf0f6;
+      --accent: #b58a55;
+      --shadow: 0 18px 50px rgba(22, 39, 61, .07);
+      --radius: 18px;
+      --content: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+    .container { width: min(var(--content), calc(100% - 44px)); margin: 0 auto; }
+
+    .site-header {
+      position: sticky; top: 0; z-index: 20;
+      background: rgba(247,248,250,.94); backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(227,231,237,.9);
+    }
+    .nav-wrap { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { font-weight: 800; letter-spacing: -.045em; font-size: 1.18rem; }
+    .brand span { color: var(--blue); }
+    .nav-links { display: flex; align-items: center; gap: 25px; }
+    .nav-links a { color: var(--muted); font-size: .9rem; font-weight: 650; transition: color .2s ease; }
+    .nav-links a:hover, .nav-links a.active { color: var(--blue); }
+    .menu-toggle {
+      display: none; border: 1px solid var(--line); background: var(--white);
+      color: var(--ink); border-radius: 10px; padding: 9px 12px; font-size: 1.1rem; cursor: pointer;
+    }
+
+    .hero { padding: 88px 0 76px; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0,1.35fr) minmax(270px,.65fr); gap: 64px; align-items: center; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 9px; color: var(--blue);
+      background: var(--blue-soft); border: 1px solid #dce6f0; border-radius: 999px;
+      padding: 7px 13px; font-size: .78rem; font-weight: 750; letter-spacing: .04em;
+    }
+    .eyebrow::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+    h1 { margin: 22px 0 17px; font-size: clamp(3rem, 7vw, 5.5rem); line-height: .99; letter-spacing: -.075em; font-weight: 780; }
+    h1 span { display: block; color: var(--blue); }
+    .hero-lead { max-width: 670px; color: #59677a; font-size: clamp(1.05rem, 2vw, 1.2rem); margin: 0; }
+    .hero-note { margin: 17px 0 0; color: var(--muted); font-size: .94rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 29px; }
+    .button {
+      display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+      min-height: 46px; padding: 11px 17px; border-radius: 10px; font-weight: 720; font-size: .91rem;
+      transition: transform .2s ease, background .2s ease;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { color: white; background: var(--navy); }
+    .button-primary:hover { background: var(--blue); }
+    .button-secondary { background: white; border: 1px solid var(--line); }
+    .profile-panel {
+      position: relative; overflow: hidden; padding: 30px; background: var(--navy);
+      color: white; border-radius: 22px; box-shadow: 0 24px 55px rgba(20,43,73,.16);
+    }
+    .profile-panel::after {
+      content: ""; position: absolute; width: 230px; height: 230px; right: -115px; top: -125px;
+      border: 1px solid rgba(255,255,255,.18); border-radius: 50%;
+      box-shadow: 0 0 0 30px rgba(255,255,255,.035), 0 0 0 62px rgba(255,255,255,.025);
+    }
+    .photo-frame { position: relative; z-index: 1; width: 126px; height: 126px; overflow: hidden; border-radius: 50%; border: 4px solid rgba(255,255,255,.82); }
+    .photo-frame img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: center; }
+    .photo-frame.photo-fallback::after { content: "BM"; display: grid; place-items: center; width: 100%; height: 100%; color: var(--navy); background: #eaf0f6; font-size: 2.2rem; font-weight: 800; }
+    .profile-panel h2 { margin: 21px 0 5px; font-size: 1.35rem; letter-spacing: -.035em; }
+    .profile-panel p { margin: 0; color: rgba(255,255,255,.74); font-size: .94rem; }
+    .profile-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+    .profile-tags span { border: 1px solid rgba(255,255,255,.2); background: rgba(255,255,255,.08); padding: 5px 9px; border-radius: 7px; font-size: .76rem; }
+
+    section { padding: 76px 0; }
+    .section-heading { max-width: 690px; margin-bottom: 30px; }
+    .section-label { color: var(--blue); text-transform: uppercase; letter-spacing: .15em; font-size: .72rem; font-weight: 800; }
+    .section-title { margin: 8px 0 9px; font-size: clamp(2rem, 4vw, 2.8rem); line-height: 1.12; letter-spacing: -.06em; }
+    .section-intro { margin: 0; color: var(--muted); }
+    .two-column { display: grid; grid-template-columns: 1.1fr .9fr; gap: 18px; }
+    .surface, .skill-card, .experience-card, .education-card, .project-card {
+      background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow);
+    }
+    .surface { padding: 28px; }
+    .surface p { margin: 0 0 15px; color: #5d6a7c; }
+    .surface p:last-child { margin-bottom: 0; }
+    .strength-list { display: grid; gap: 17px; }
+    .strength { display: grid; grid-template-columns: 32px 1fr; gap: 12px; align-items: start; }
+    .strength-mark { width: 30px; height: 30px; display: grid; place-items: center; color: var(--blue); background: var(--blue-soft); border-radius: 9px; font-weight: 800; }
+    .strength strong { display: block; font-size: .96rem; }
+    .strength small { display: block; color: var(--muted); font-size: .86rem; line-height: 1.55; margin-top: 2px; }
+
+    .skills-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 15px; }
+    .skill-card { padding: 23px; box-shadow: none; }
+    .skill-card h3 { margin: 0 0 14px; font-size: 1rem; letter-spacing: -.02em; }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .chip { padding: 5px 9px; border-radius: 7px; background: #f0f2f5; color: #4e5b6d; font-size: .78rem; }
+
+    .experience-list { display: grid; gap: 16px; }
+    .experience-card { display: grid; grid-template-columns: 190px 1fr; gap: 28px; padding: 27px; }
+    .experience-date { color: var(--blue); font-weight: 750; font-size: .87rem; }
+    .experience-location { color: var(--muted); font-size: .82rem; margin-top: 4px; }
+    .experience-card h3, .education-card h3, .project-card h3 { margin: 0; font-size: 1.12rem; line-height: 1.4; letter-spacing: -.025em; }
+    .company { margin: 4px 0 12px; color: var(--muted); font-weight: 650; }
+    .experience-card ul { margin: 0; padding-left: 19px; color: #5d6a7c; }
+    .experience-card li { margin: 6px 0; }
+
+    .education-grid, .projects-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; }
+    .education-card, .project-card { padding: 25px; }
+    .date-pill, .project-type {
+      display: inline-block; margin-bottom: 13px; padding: 5px 9px; border-radius: 7px;
+      color: var(--blue); background: var(--blue-soft); font-size: .76rem; font-weight: 750;
+    }
+    .education-card p, .project-card p { margin: 7px 0 0; color: var(--muted); font-size: .92rem; }
+    .project-card { position: relative; overflow: hidden; box-shadow: none; }
+    .project-card::after { content: ""; position: absolute; width: 105px; height: 105px; top: -58px; right: -48px; border: 1px solid #dce6f0; border-radius: 50%; box-shadow: 0 0 0 18px #f7f9fb; }
+    .project-card > * { position: relative; z-index: 1; }
+    .project-card .chips { margin-top: 17px; }
+
+    .contact-panel {
+      display: grid; grid-template-columns: 1.1fr .9fr; gap: 30px; align-items: center;
+      padding: 42px; border-radius: 22px; background: var(--navy); color: white;
+    }
+    .contact-panel .section-label { color: #c8d6e7; }
+    .contact-panel h2 { margin: 10px 0; font-size: clamp(2rem,4vw,2.7rem); line-height: 1.08; letter-spacing: -.06em; }
+    .contact-panel p { margin: 0; color: rgba(255,255,255,.72); }
+    .contact-links { display: grid; gap: 10px; }
+    .contact-links a, .contact-links span {
+      display: block; padding: 11px 13px; border: 1px solid rgba(255,255,255,.18);
+      border-radius: 9px; background: rgba(255,255,255,.06); color: rgba(255,255,255,.92);
+      font-size: .88rem; overflow-wrap: anywhere;
+    }
+    .contact-links a:hover { background: rgba(255,255,255,.13); }
+    footer { padding: 25px 0; color: var(--muted); font-size: .85rem; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 14px; flex-wrap: wrap; }
+    .back-top { color: var(--blue); font-weight: 750; }
+
+    @media (max-width: 860px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 34px; }
+      .profile-panel { max-width: 500px; }
+      .two-column, .contact-panel { grid-template-columns: 1fr; }
+      .skills-grid { grid-template-columns: repeat(2,1fr); }
+      .nav-links { display: none; position: absolute; top: 76px; left: 0; right: 0; padding: 18px 22px 22px; background: var(--paper); border-bottom: 1px solid var(--line); flex-direction: column; align-items: flex-start; gap: 14px; }
+      .nav-links.open { display: flex; }
+      .menu-toggle { display: inline-block; }
+    }
+    @media (max-width: 620px) {
+      .container { width: min(100% - 30px, var(--content)); }
+      .hero { padding: 57px 0 48px; }
+      section { padding: 57px 0; }
+      .skills-grid, .education-grid, .projects-grid { grid-template-columns: 1fr; }
+      .experience-card { grid-template-columns: 1fr; gap: 9px; padding: 22px; }
+      .surface, .skill-card, .education-card, .project-card { padding: 21px; }
+      .contact-panel { padding: 28px 22px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+    }
+    @media print {
+      .site-header, .hero-actions, .menu-toggle, .back-top { display: none !important; }
+      body { background: white; }
+      section, .hero { padding: 24px 0; }
+      .surface, .skill-card, .experience-card, .education-card, .project-card { box-shadow: none; break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#home" aria-label="Bhargavi Macharla home">Bhargavi<span>.</span></a>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation" aria-expanded="false">☰</button>
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a>
+        <a href="#education">Education</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Data &amp; Business Analytics</span>
+          <h1>Bhargavi <span>Macharla</span></h1>
+          <p class="hero-lead">I work with data, reports and business information to help make day-to-day performance easier to understand.</p>
+          <p class="hero-note">Interested in junior opportunities across data analysis, business analysis, financial reporting and business operations.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#projects">View selected projects <span aria-hidden="true">↗</span></a>
+            <a class="button button-secondary" href="#contact">Contact me</a>
+          </div>
+        </div>
+        <aside class="profile-panel">
+          <div class="photo-frame"><img src="profile-photo.jpeg" alt="Portrait of Bhargavi Macharla" onerror="this.style.display='none'; this.parentElement.classList.add('photo-fallback')"></div>
+          <h2>Practical analysis. Clear reporting.</h2>
+          <p>SQL, Power BI, Advanced Excel and business operations.</p>
+          <div class="profile-tags"><span>SQL</span><span>Power BI</span><span>Advanced Excel</span><span>Zoho CRM</span></div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-heading"><h2 class="section-title">About</h2><p class="section-intro">A background that brings together data, finance and business support.</p></div>
+        <div class="two-column">
+          <div class="surface">
+            <p>My experience covers data analysis, business operations and sales administration. I have worked with financial and operational information, prepared reports and dashboards, checked records for accuracy, and coordinated with clients, suppliers and internal teams.</p>
+            <p>I like working through information carefully, understanding why figures differ and presenting the results in a way that people can use. I am now looking to build on this experience in a junior data, business or financial analysis role.</p>
+          </div>
+          <div class="surface strength-list">
+            <div class="strength"><span class="strength-mark">01</span><div><strong>Data analysis and reporting</strong><small>Working with datasets, dashboards and performance reports.</small></div></div>
+            <div class="strength"><span class="strength-mark">02</span><div><strong>Financial and operational support</strong><small>Supporting cost comparisons, quotations, invoicing and business records.</small></div></div>
+            <div class="strength"><span class="strength-mark">03</span><div><strong>Data quality</strong><small>Checking information, following up discrepancies and supporting reliable reporting.</small></div></div>
+            <div class="strength"><span class="strength-mark">04</span><div><strong>Working with people</strong><small>Sharing information and coordinating with clients, suppliers and colleagues.</small></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-heading"><h2 class="section-title">Skills &amp; Tools</h2><p class="section-intro">A selection of tools and skills used across analysis, reporting and business support.</p></div>
+        <div class="skills-grid">
+          <article class="skill-card"><h3>Data &amp; Business Intelligence</h3><div class="chips"><span class="chip">SQL</span><span class="chip">Power BI</span><span class="chip">Business Objects</span><span class="chip">Data analysis</span><span class="chip">Data modelling</span></div></article>
+          <article class="skill-card"><h3>Excel &amp; Reporting</h3><div class="chips"><span class="chip">PivotTables</span><span class="chip">XLOOKUP / VLOOKUP</span><span class="chip">Dashboards</span><span class="chip">Financial formulas</span><span class="chip">Reporting</span></div></article>
+          <article class="skill-card"><h3>Financial Analysis</h3><div class="chips"><span class="chip">Financial modelling</span><span class="chip">Forecasting</span><span class="chip">Budget vs actual</span><span class="chip">Variance analysis</span><span class="chip">Cost drivers</span></div></article>
+          <article class="skill-card"><h3>Business Operations</h3><div class="chips"><span class="chip">Quotations</span><span class="chip">Invoicing support</span><span class="chip">Supplier cost comparisons</span><span class="chip">Zoho CRM</span></div></article>
+          <article class="skill-card"><h3>Data Quality &amp; Process</h3><div class="chips"><span class="chip">Data validation</span><span class="chip">Discrepancy investigation</span><span class="chip">Reconciliation support</span><span class="chip">Process improvement</span></div></article>
+          <article class="skill-card"><h3>Ways of Working</h3><div class="chips"><span class="chip">Stakeholder communication</span><span class="chip">Problem solving</span><span class="chip">Team collaboration</span><span class="chip">Time management</span></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <div class="section-heading"><h2 class="section-title">Experience</h2><p class="section-intro">Experience across data analysis, reporting and business operations.</p></div>
+        <div class="experience-list">
+          <article class="experience-card">
+            <div><div class="experience-date">September 2025 – April 2026</div><div class="experience-location">Birmingham, UK</div></div>
+            <div><h3>Data Analyst Intern</h3><div class="company">Devi Technology</div>
+              <ul>
+                <li>Analysed financial and operational datasets using Excel, SQL and Power BI to support reporting and business analysis.</li>
+                <li>Built Power BI dashboards to present budget-versus-actual information, trends and cost drivers.</li>
+                <li>Carried out data audits and statistical reporting across seven projects, checking discrepancies and data quality.</li>
+                <li>Shared findings with non-technical stakeholders and department heads.</li>
+                <li>Supported improvements to data extraction and reporting workflows, contributing to a 25% reduction in weekly reporting time.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="experience-card">
+            <div><div class="experience-date">December 2023 – August 2024</div><div class="experience-location">Hyderabad, India</div></div>
+            <div><h3>Sales &amp; Business Operations Administrator</h3><div class="company">RN Embedded Solutions</div>
+              <ul>
+                <li>Prepared quotations and supported invoicing and sales administration.</li>
+                <li>Compared supplier prices and costs to support purchasing and budgeting information.</li>
+                <li>Maintained Zoho CRM records and helped keep business information accurate and up to date.</li>
+                <li>Coordinated with clients, suppliers and internal teams on day-to-day operational requirements.</li>
+                <li>Assisted with monthly reports and routine record checks.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="container">
+        <div class="section-heading"><h2 class="section-title">Education</h2></div>
+        <div class="education-grid">
+          <article class="education-card"><span class="date-pill">September 2024 – June 2026</span><h3>MSc International Business Management &amp; Data Analytics (with Advanced Practice)</h3><p>Wrexham Glyndwr University, UK</p></article>
+          <article class="education-card"><span class="date-pill">July 2020 – June 2023</span><h3>BTech – Electrical and Electronics Engineering</h3><p>Gandhi Academy of Technical Education, India · First Class Honours · 75%</p></article>
+          <article class="education-card"><span class="date-pill">July 2017 – May 2020</span><h3>Diploma – Electrical and Electronics Engineering</h3><p>Talla Padmavathi College of Engineering, India · First Class Honours · 83%</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-heading"><h2 class="section-title">Projects</h2><p class="section-intro">Examples of work involving financial analysis, reporting and business operations.</p></div>
+        <div class="projects-grid">
+          <article class="project-card">
+            <span class="project-type">Financial modelling · Data analysis</span>
+            <h3>SEND Cohort Funding &amp; Financial Modelling Analysis</h3>
+            <p>Worked with mock Liverpool City Council and education-sector data covering EHCP cohort expenditure, high-needs funding and unit costs. The work included quarterly DfE-aligned templates and Excel/SQL variance analysis.</p>
+            <div class="chips"><span class="chip">Excel</span><span class="chip">SQL</span><span class="chip">Financial analysis</span><span class="chip">Variance analysis</span></div>
+          </article>
+          <article class="project-card">
+            <span class="project-type">Business operations · Cost review</span>
+            <h3>Sales Operations, Budgeting &amp; Cost Efficiency Analysis</h3>
+            <p>Created a supplier cost comparison framework using Excel and CRM information to support cost reviews, budgeting and day-to-day business operations at RN Embedded Solutions.</p>
+            <div class="chips"><span class="chip">Excel</span><span class="chip">Zoho CRM</span><span class="chip">Cost comparison</span><span class="chip">Operations</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact-panel">
+          <div><h2>Open to the right opportunity.</h2><p>I am interested in junior roles across data analysis, business analysis, financial reporting and business operations. If my background fits a role you are recruiting for, I would be pleased to hear from you.</p></div>
+          <div class="contact-links">
+            <a href="mailto:bhargavimacherla24@gmail.com">Email: bhargavimacherla24@gmail.com</a>
+            <a href="tel:+447383256379">Phone: +44 7383 256379</a>
+            <a href="https://www.linkedin.com/in/bhargavi-macherla-782a22257" target="_blank" rel="noopener noreferrer">LinkedIn profile ↗</a>
+            <span>Preston, Lancashire, UK</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container footer-inner"><span>© <span id="currentYear"></span> Bhargavi Macharla</span><a class="back-top" href="#home">Back to top ↑</a></div></footer>
+
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
+      menuToggle.textContent = isOpen ? "×" : "☰";
+    });
+
+    navLinks.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open navigation");
+        menuToggle.textContent = "☰";
+      });
+    });
+
+    document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+    if ("IntersectionObserver" in window) {
+      const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          navLinks.querySelectorAll("a").forEach((link) => {
+            link.classList.toggle("active", link.getAttribute("href") === `#${entry.target.id}`);
+          });
+        });
+      }, { rootMargin: "-35% 0px -55% 0px" });
+
+      document.querySelectorAll("main section[id]").forEach((section) => sectionObserver.observe(section));
+    }
+  </script>
+</body>
+</html>
